@@ -10,7 +10,7 @@ interface ICardItem {
 
 function CardItem({ children, nickname, onClickButton, cardNumber, buttonText }: PropsWithChildren<ICardItem>) {
   const handleClickButton = useCallback(() => {
-    onClickButton(cardNumber);
+    onClickButton?.(cardNumber);
   }, []);
 
   return (
