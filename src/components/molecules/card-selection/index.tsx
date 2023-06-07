@@ -7,7 +7,6 @@ export interface ICardSelection {
   onChange: (data: ICard) => void;
 }
 
-
 function CardSelection({ onChange }: ICardSelection) {
   const handleClick = useCallback((cardCompany: ICard) => {
     onChange(cardCompany);
@@ -18,9 +17,9 @@ function CardSelection({ onChange }: ICardSelection) {
       {CARD_DATA.flat().map((cardItem) => (
         <div className="flex-center" key={crypto.randomUUID()}>
           <ModalItem
-            key={cardItem.name}
+            key={cardItem.cardCompany}
             dotColor={cardItem.color}
-            title={cardItem.name}
+            title={cardItem.cardCompany}
             item={cardItem}
             onClick={handleClick}
           />
