@@ -21,6 +21,7 @@ function CardNumber() {
       type: 'SET_CARD',
       payload: { cardNumber }
     });
+
     setErrorMessage(isCardNumber(cardNumber) ? '' : VALIDATE_ERROR);
   }, []);
 

@@ -3,6 +3,12 @@ export type TTwoDigit = `${TSingleDigit}${TSingleDigit}`;
 export type TThreeDigit = `${TSingleDigit}${TSingleDigit}${TSingleDigit}`;
 export type TFourDigit = `${TSingleDigit}${TSingleDigit}${TSingleDigit}${TSingleDigit}`;
 
+export interface ICardTheme {
+  color: string;
+  name: string;
+  key: string;
+}
+
 export interface ICard {
   cardCompany?: string;
   cardNumber?: string;
