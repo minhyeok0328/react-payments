@@ -22,8 +22,9 @@ export default function RegisterCard() {
   const handleClickOutside = () => {
     setShowModal(false);
   };
-  const handleCardCompany = useCallback((company: ICardDTO) => {
-    cardDispatch({ type: 'SET_CARD', payload: company });
+  const handleCardCompany = useCallback((cardPayload: ICardDTO) => {
+    cardDispatch({ type: 'SET_CARD', payload: cardPayload });
+    setShowModal(false);
   }, []);
   const saveCardData = () => {
     const invalidMessage = invalidCard(cardState);
@@ -53,7 +54,7 @@ export default function RegisterCard() {
     const { cardNumber, cardCompany } = cardState;
     const cardTheme = useSetCardTheme(cardNumber);
 
-    if (!cardNumber?.length) {
+    if (cardNumber?.length === 16 && !cardCompany) {
       setShowModal(true);
       return;
     }
