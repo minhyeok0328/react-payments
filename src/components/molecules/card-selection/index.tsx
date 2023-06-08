@@ -14,7 +14,7 @@ function CardSelection({ onChange }: ICardSelection) {
 
   return (
     <>
-      {CARD_DATA.flat().map((cardItem) => (
+      {CARD_DATA.map((cardItem) => (
         <div className="flex-center" key={crypto.randomUUID()}>
           <ModalItem
             key={cardItem.cardCompany}
